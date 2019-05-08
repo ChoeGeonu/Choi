@@ -13,7 +13,7 @@ import javafx.scene.control.TabPane;
 
 public class MainController implements Initializable {
 	@FXML
-	private TabPane mainPan;
+	private TabPane mainPane;
 	@FXML
 	private Tab subject;
 	@FXML
