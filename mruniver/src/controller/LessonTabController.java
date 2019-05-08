@@ -84,7 +84,7 @@ public class LessonTabController implements Initializable {
 	}
 
 	// 과목 등록 텍스트 필드 키 이벤트
-	private Object handlerTxtLessonNumKeyPressed(KeyEvent event) {
+	public void handlerTxtLessonNumKeyPressed(KeyEvent event) {
 		if (txtLessonNum.getText().length() >= 3) {
 			txtLessonNum.clear();
 
