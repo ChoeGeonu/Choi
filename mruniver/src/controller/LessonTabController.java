@@ -178,8 +178,8 @@ public class LessonTabController implements Initializable {
 	public void handlerLessonTableViewActoion(MouseEvent event) {
 		if (event.getClickCount() == 2) {
 			try {
-				selectLesson
-				lessonTableView.getSelectionModel().getSelecteditems();
+				selectLesson=
+				lessonTableView.getSelectionModel().getSelectedItems();
 				selectedLessonlndx = selectLesson.get(0).getNo();
 				String selectedL_num = selectLesson.get(0).getL_num();
 				String selectedL_name = selectLesson.get(0).getL_name();

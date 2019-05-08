@@ -11,6 +11,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
 
 <AnchorPane prefHeight="310.0" prefWidth="400.0"
 xmlns:fx="http://javafx.com/fxml/1"
@@ -33,6 +34,10 @@ fx:controller="controller.LoginController">
 		<HBox  alignment="CENTER">
 			<Label text="아 이 디:"/>
 			<TextField fx:id="txtId"/>
+		</HBox>
+		<HBox alignment="CENTER">
+			<Label text="비밀번호:"/>
+			<PasswordField fx:id="txtPassword"/>
 		</HBox>
 		<HBox alignment="CENTER">
 			<spacing>10</spacing>
