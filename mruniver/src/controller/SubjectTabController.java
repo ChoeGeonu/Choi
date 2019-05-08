@@ -18,6 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import model.SubjectVO;
 
@@ -78,7 +79,7 @@ public class SubjectTabController implements Initializable {
 			subjectTotalList();
 
 			// 학과 키 이벤트
-			txtSubjectNum.setOnAction(event -> handlerTxtSubjectNumKeyPressed(event));// 학과등록 텍스트필드 키 이벤트
+			txtSubjectNum.setOnKeyPressed(event -> handlerTxtSubjectNumKeyPressed(event));// 학과등록 텍스트필드 키 이벤트
 			// 학과 등록 수저 삭제 이벤트
 			btnInsert.setOnAction(event -> handlerBtnInsertActoion(event)); // 학과 등록 이벤트
 			btnDelete.setOnAction(event -> handlerBtnDeleteActoion(event)); // 학과 삭제
@@ -113,7 +114,7 @@ public class SubjectTabController implements Initializable {
 	}
 
 	// 학과등록 텍스트필드 키 이벤트
-	public void handlerTxtSubjectNumKeyPressed(ActionEvent event) {
+	public void handlerTxtSubjectNumKeyPressed(KeyEvent event) {
 
 		if ((txtSubjectNum.getText().length() >= 3)) {
 			txtSubjectNum.clear();
