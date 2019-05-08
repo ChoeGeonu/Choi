@@ -6,18 +6,18 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.concurrent.locks.Condition;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import model.SubjectVO;
 
-public class SudjectDAO {
+public class SubjectDAO {
 	// 학과목록
 	public ArrayList<SubjectVO> getSubjectTotaList() throws Exception {
 		ArrayList<SubjectVO> list = new ArrayList<>();
 
 		String sql = "select * from subject order by no";
-		Condition con = null;
+		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		SubjectVO sVo = null;
@@ -27,9 +27,9 @@ public class SudjectDAO {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				sVo = new SubjectVO();
-				sVo.getNo(rs.getInt("no"));
-				sVo.getS_num(rs.getString("s_num"));
-				sVo.getS_name(rs.getString("s_name"));
+				sVo.setNo(rs.getInt("no"));
+				sVo.setS_num(rs.getString("s_num"));
+				sVo.setS_name(rs.getString("s_name"));
 
 				list.add(sVo);
 
@@ -47,7 +47,6 @@ public class SudjectDAO {
 				if (con != null)
 					con.close();
 			} catch (SQLException se) {
-				System.out.println(se);
 			}
 		}
 		return list;

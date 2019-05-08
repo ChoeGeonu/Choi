@@ -33,7 +33,7 @@ public class TraineeTotalTabController implements Initializable {
 	@FXML
 	Label lblCount;
 	@FXML
-	TableView<TraineeVO> traineeTatolTableView = new TableView();
+	TableView<TraineeVO> traineeTableView = new TableView();
 
 	ObservableList<TraineeVO> traineeDataList = FXCollections.observableArrayList();
 
@@ -72,8 +72,8 @@ public class TraineeTotalTabController implements Initializable {
 			colTDate.setStyle("-fx-allignment:CENTER");
 			colTDate.setCellValueFactory(new PropertyValueFactory<>("t_date"));
 
-			traineeTableView.setitems(traineeDataList);
-			traineeTableView.get(Columns().addAll(colNo, colSdNum, colSdName, colLNum, colTSection, colTDate));
+			traineeTableView.setItems(traineeDataList);
+			traineeTableView.getColumns().addAll(colNo, colSdNum, colSdName, colLNum, colTSection, colTDate);
 
 			// 수강 전체 목록
 			traineeTotalList();
@@ -179,25 +179,27 @@ public class TraineeTotalTabController implements Initializable {
 		}
 
 	}
-	//수강 전체 리스트
-	public void traineeDataList() throws Exception{
-	traineeDataList.removeAll(traineeDataList);
-	
-	TraineeDAO tDao = new TraineeDAO();
-	TraineeVO tVo = null;
-	ArrayList<String> title;
-	ArrayList<TraineeVO> list;
-	
-	title = tDao.getTraineeColumnName();
-	int columnCount = title.size();
-	
-	list = tDao.getTraineeTotalList();
-	int rowCount = list.size();
-	
-	lblCount.setText("총원: " + rowCount + " 명");
-	for (int index = 0; index < rowCount; index++) {
-		tVo = list.get(index);
-		traineeDataList.add(tVo);
-		
+
+	// 수강 전체 리스트
+	public void traineeTotalList() throws Exception {
+		traineeDataList.removeAll(traineeDataList);
+
+		TraineeDAO tDao = new TraineeDAO();
+		TraineeVO tVo = null;
+		ArrayList<String> title;
+		ArrayList<TraineeVO> list;
+
+		title = tDao.getTraineeColumnName();
+		int columnCount = title.size();
+
+		list = tDao.getTraineeTotalList();
+		int rowCount = list.size();
+
+		lblCount.setText("총원: " + rowCount + " 명");
+		for (int index = 0; index < rowCount; index++) {
+			tVo = list.get(index);
+			traineeDataList.add(tVo);
+
+		}
 	}
-}}
+}
