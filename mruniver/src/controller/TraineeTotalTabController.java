@@ -33,7 +33,7 @@ public class TraineeTotalTabController implements Initializable {
 	@FXML
 	Label lblCount;
 	@FXML
-	TableView<TraineeVO> traineeTableView = new TableView();
+	TableView<TraineeVO> traineeTatolTableView = new TableView();
 
 	ObservableList<TraineeVO> traineeDataList = FXCollections.observableArrayList();
 

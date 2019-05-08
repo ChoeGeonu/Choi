@@ -11,7 +11,7 @@ public class DBUtil {
 	public static Connection getConnection() throws Exception {
 		Class.forName(driver);
 		Connection con = DriverManager.getConnection(url, "scott", "tiger");
-		System.out.println("DB �뿰寃� �꽦怨�");
+		System.out.println("DB 연결성공");
 		return con;
 
 	}
