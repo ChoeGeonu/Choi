@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class LoginDAO {
 	// 관리자 로그인
-	public boolean getLogin(String loginId, String loginPassword) throws Exception {
+	public boolean getLogin(String loginid, String loginPassword) throws Exception {
 
 		String sql = "select * from managerjoin where id = ? and password = ?";
 		Connection con = null;
@@ -17,7 +17,7 @@ public class LoginDAO {
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, loginId);
+			pstmt.setString(1, loginid);
 			pstmt.setString(2, loginPassword);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
@@ -43,7 +43,7 @@ public class LoginDAO {
 		return loginResult;
 	}
 
-	public String getLoginName(String loginId) throws Exception {
+	public String getLoginName(String loginid) throws Exception {
 		String sql = "sele name from managerjoin where id =?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -52,7 +52,7 @@ public class LoginDAO {
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, loginId);
+			pstmt.setString(1, loginid);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
