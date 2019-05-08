@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import model.StudentVO;
 
 public class StudentDAO {
 	// 로그인 학생 이름
@@ -181,7 +182,7 @@ public class StudentDAO {
 			pstmt.setString(1, idOverlap);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				idOverlapResult = true//중복된 아이디 있다
+				idOverlapResult = true;//중복된 아이디 있다
 			}
 			
 		} catch (SQLException e) {
