@@ -77,7 +77,7 @@ public class StudentTabController implements Initializable {
 			// 학번 수정 금지
 			txtsd_num.setEditable(false);
 
-			// 학생 테이블 븅 컬럼 이름 설정
+			// 학생 테이블 뷰 컬럼 이름 설정
 			@SuppressWarnings("rawtypes")
 			TableColumn colStudentNo = new TableColumn("NO");
 			colStudentNo.setPrefWidth(30);
@@ -90,29 +90,29 @@ public class StudentTabController implements Initializable {
 			colStudentNum.setCellValueFactory(new PropertyValueFactory("sd_num"));
 
 			TableColumn colStudentName = new TableColumn("이름");
-			colStudentName.setPrefWidth(30);
+			colStudentName.setPrefWidth(80);
 			colStudentName.setStyle("-fx-allignment:CENTER");
-			colStudentName.setCellValueFactory(new PropertyValueFactory("sd_name"));
+			colStudentName.setCellValueFactory(new PropertyValueFactory<>("sd_name"));
 
-			TableColumn colStudentId = new TableColumn("아이디");
-			colStudentId.setPrefWidth(30);
-			colStudentId.setStyle("-fx-allignment:CENTER");
-			colStudentId.setCellValueFactory(new PropertyValueFactory("sd_id"));
+			TableColumn colStudentid = new TableColumn("아이디");
+			colStudentid.setPrefWidth(80);
+			colStudentid.setStyle("-fx-allignment:CENTER");
+			colStudentid.setCellValueFactory(new PropertyValueFactory<>("sd_id"));
 
 			TableColumn colStudentPassword = new TableColumn("비밀번호");
-			colStudentPassword.setPrefWidth(30);
+			colStudentPassword.setPrefWidth(80);
 			colStudentPassword.setStyle("-fx-allignment:CENTER");
-			colStudentPassword.setCellValueFactory(new PropertyValueFactory("sd_passwd"));
+			colStudentPassword.setCellValueFactory(new PropertyValueFactory<>("sd_passwd"));
 
 			TableColumn colSubjectNum = new TableColumn("학과명");
-			colSubjectNum.setPrefWidth(30);
+			colSubjectNum.setPrefWidth(80);
 			colSubjectNum.setStyle("-fx-allignment:CENTER");
-			colSubjectNum.setCellValueFactory(new PropertyValueFactory("s_num"));
+			colSubjectNum.setCellValueFactory(new PropertyValueFactory<>("s_num"));
 
 			TableColumn colStudentBirthday = new TableColumn("생년월일");
-			colStudentBirthday.setPrefWidth(30);
+			colStudentBirthday.setPrefWidth(80);
 			colStudentBirthday.setStyle("-fx-allignment:CENTER");
-			colStudentBirthday.setCellValueFactory(new PropertyValueFactory("sd_birthday"));
+			colStudentBirthday.setCellValueFactory(new PropertyValueFactory<>("sd_birthday"));
 
 			TableColumn colStudentPhone = new TableColumn("연락처");
 			colStudentPhone.setPrefWidth(30);
@@ -135,11 +135,11 @@ public class StudentTabController implements Initializable {
 			colStudentDate.setCellValueFactory(new PropertyValueFactory("sd_date"));
 
 			studentTableView.setItems(studentDataList);
-			studentTableView.getColumns().addAll(colStudentNo, colStudentNum, colStudentName, colStudentId,
+			studentTableView.getColumns().addAll(colStudentNo, colStudentNum, colStudentName, colStudentid,
 					colStudentPassword, colStudentNum, colStudentBirthday, colStudentPhone, colStudentAddress,
 					colStudentEmail, colStudentDate);
 
-			// 학생 전체 목로
+			// 학생 전체 목록
 			studentTotalList();
 
 			// 추가된 학과명 호출
@@ -345,7 +345,6 @@ public class StudentTabController implements Initializable {
 				e.printStackTrace();
 			}
 		}
-
 	}
 
 	// 학생 전체 목록
@@ -382,21 +381,23 @@ public class StudentTabController implements Initializable {
 			btnStudentUpdate.setDisable(true);
 			btnStudentinit.setDisable(true);
 			btnStudentInsert.setDisable(true);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	// 학생 정보 수정
+	// 학생정보 수정
 	public void handlerBtnStudentUpdateAction(ActionEvent event) {
 		try {
-			boolean sucess;
+			boolean suces;
 
 			StudentDAO sdao = new StudentDAO();
-			sucess = sdao.getStudentUpdate(selectedStudentindex, txtsd_passwd.getText().trim(),
+			suces = sdao.getStudentUpdate(selectedStudentindex, txtsd_passwd.getText().trim(),
 					txtsd_birthday.getText().trim(), txtsd_phone.getText().trim(), txtsd_address.getText().trim(),
 					txtsd_email.getText().trim());
-			if (sucess) {
+
+			if (suces) {
 				studentDataList.removeAll(studentDataList);
 				studentTotalList();
 
@@ -404,6 +405,8 @@ public class StudentTabController implements Initializable {
 				txtsd_name.clear();
 				txtsd_id.clear();
 				txtsd_passwd.clear();
+				txtsd_birthday.clear();
+				txtsd_phone.clear();
 				txtsd_address.clear();
 				txtsd_email.clear();
 
@@ -415,12 +418,11 @@ public class StudentTabController implements Initializable {
 				cbx_subjectName.setDisable(false);
 				btnStudentUpdate.setDisable(true);
 				btnStudentinit.setDisable(true);
-				btnStudentInsert.setDisable(false);
+				btnStudentInsert.setDisable(true);
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
-
 }
