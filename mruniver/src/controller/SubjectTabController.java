@@ -36,7 +36,7 @@ public class SubjectTabController implements Initializable {
 	@FXML
 	private Button btnInsert; // 학과등록
 	@FXML
-	private Button btnUpdte;// 학과 수정
+	private Button btnUpdate;// 학과 수정
 	@FXML
 	private Button btnDelete;// 학과 삭제
 	@FXML
@@ -52,7 +52,7 @@ public class SubjectTabController implements Initializable {
 			lblManagerName.setText(LoginController.managerName);
 
 			// 학과등록 초기화
-			btnUpdte.setDisable(true);
+			btnUpdate.setDisable(true);
 			btnDelete.setDisable(true);
 			subjectTableView.setEditable(false);
 
@@ -83,7 +83,7 @@ public class SubjectTabController implements Initializable {
 			// 학과 등록 수저 삭제 이벤트
 			btnInsert.setOnAction(event -> handlerBtnInsertActoion(event)); // 학과 등록 이벤트
 			btnDelete.setOnAction(event -> handlerBtnDeleteActoion(event)); // 학과 삭제
-			btnUpdte.setOnAction(event -> handlerBtnUpdateActoion(event)); // 학과 수정
+			btnUpdate.setOnAction(event -> handlerBtnUpdateActoion(event)); // 학과 수정
 			subjectTableView.setOnMouseClicked(event -> handlerSubjectTableViewActoion(event)); // 학과 테이블뷰 더블 클릭 선댁
 			btnRead.setOnAction(event -> handlerBtnReadAction(event)); // 테이블 뷰 읽기
 		} catch (Exception e) {
@@ -104,7 +104,7 @@ public class SubjectTabController implements Initializable {
 				txtSubjectNum.setText(selectedS_num);
 				txtSubjectName.setText(selectedS_name);
 
-				btnUpdte.setDisable(false);
+				btnUpdate.setDisable(false);
 				btnDelete.setDisable(false);
 				btnInsert.setDisable(true);
 			} catch (Exception e) {
@@ -194,7 +194,7 @@ public class SubjectTabController implements Initializable {
 				txtSubjectNum.clear();
 				txtSubjectName.clear();
 				btnInsert.setDisable(false);
-				btnUpdte.setDisable(true);
+				btnUpdate.setDisable(true);
 				btnDelete.setDisable(true);
 			}
 		} catch (Exception e) {
@@ -216,7 +216,7 @@ public class SubjectTabController implements Initializable {
 				txtSubjectNum.clear();
 				txtSubjectName.clear();
 				btnInsert.setDisable(false);
-				btnUpdte.setDisable(true);
+				btnUpdate.setDisable(true);
 				btnDelete.setDisable(true);
 
 			}

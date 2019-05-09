@@ -23,7 +23,7 @@
 			layoutY="110.0" />
 		<Label text="아이디 :" layoutX="35.0" layoutY="142.0" />
 		<TextField fx:id="txtsd_id" layoutX="100.0" layoutY="140.0" />
-		<Button fx:id="btnIdCheck" text="ID 체크" layoutX="240.0"
+		<Button fx:id="btnidCheck" text="ID 체크" layoutX="240.0"
 			layoutY="140.0" />
 		<Label text="비밀번호 :" layoutX="35.0" layoutY="172.0" />
 		<PasswordField fx:id="txtsd_passwd" layoutX="100.0"
@@ -44,7 +44,7 @@
 			layoutY="350.0" />
 		<Button fx:id="btnStudentUpdate" text="학생정보수정" layoutX="105.0"
 			layoutY="350.0" />
-		<Button fx:id="btnStudentInit" text="취소" layoutX="200.0"
+		<Button fx:id="btnStudentinit" text="취소" layoutX="200.0"
 			layoutY="350.0" />
 		<Label text="학생 목록" layoutX="300.0" layoutY="30.0" />
 		<Button fx:id="btnStudentTatolList" text="학생 전체"
