@@ -15,7 +15,7 @@ import model.TraineeVO;
 public class TraineeDAO {
 	// 로그인한 학생의 정보
 	public StudentVO getStudentSubjectName(String sd_id) throws Exception {
-		String sql = "select sd_num,sd_name,(select s_name from subject where s_num=(select s_num from student where sd_id=?))as s_num from student where sd_id=?";
+		String sql ="select sd_num, sd_name, (select s_name from subject where s_num = (select s_num from student where sd_id = ?)) as s_num from student where sd_id = ?";;
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -57,7 +57,7 @@ public class TraineeDAO {
 	public String getLessonNum(String lessonName) throws Exception {
 		String l_num = "";
 
-		String sql = "select l_num from lesson where l_name=?";
+		String sql = "select l_num from lesson where l_name = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -98,8 +98,8 @@ public class TraineeDAO {
 
 	// 수강신청
 	public void getTraineeRegiste(TraineeVO tvo) throws Exception {
-		String sql = "insert into trainee" + "(no,sd_num,l_num,t_section,t_date)" + "values"
-				+ "(trainee_seq.nextval,?,?,?,sysdate)";
+		String sql = "insert into trainee " + "(no, sd_num, l_num, t_section, t_date)" + " values "
+				+ "(trainee_seq.nextval, ?, ?, ?, sysdate)";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 
@@ -147,8 +147,8 @@ public class TraineeDAO {
 	public ArrayList<TraineeVO> getTraineeTotalList(String sd_num) throws Exception {
 		ArrayList<TraineeVO> list = new ArrayList<>();
 
-		String sql = "select tr.no as no,sd_num,le.l_name as l_num, t_section,t_date" + "from trainee tr,lesson le"
-				+ "where tr.l_num=le.l_num and tr.sd_num=?" + "order by t_date";
+		String sql ="select tr.no as no, sd_num, le.l_name as l_num, t_section, t_date "
+				+ "from trainee tr, lesson le " + "where tr.l_num = le.l_num and tr.sd_num = ? " + "order by t_date";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -228,7 +228,7 @@ public class TraineeDAO {
 	// 수강 신청 삭제
 	public boolean getTraineeDelete(int no) throws Exception {
 		StringBuffer sql = new StringBuffer();
-		sql.append("delete from trainee where no=?");
+		sql.append("delete from trainee where no = ?");
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -277,9 +277,9 @@ public class TraineeDAO {
 	public ArrayList<TraineeVO> getTraineeTotalList() throws Exception {
 		ArrayList<TraineeVO> list = new ArrayList<>();
 
-		String sql = "select tr.no as no,tr.sd_num,le.l_name as l_num,st.sd_name as sd_name,t_section,t_date"
-				+ "from trainee tr,lesson le,student st"
-				+ "where tr.l_num=le.l_num and tr.sd_num = st.sd_num  order by t_date";
+		String sql = "select tr.no as no, tr.sd_num, le.l_name as l_num, st.sd_name as sd_name, t_section, t_date "
+				+ "from trainee tr, lesson le , student st "
+				+ "where tr.l_num = le.l_num and tr.sd_num = st.sd_num order by t_date";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -322,9 +322,10 @@ public class TraineeDAO {
 	public ArrayList<TraineeVO> getTraineeStudentNumSearchList(String sd_num) throws Exception {
 		ArrayList<TraineeVO> list = new ArrayList<>();
 
-		String sql = "select tr.no as no,tr.sd_num,le.l_name as l_num,st.sd_name as sd_name,t_section,t_date"
-				+ "from trainee tr,lesson le,student st"
-				+ "where tr.l_num=le.l_num and tr.sd_num=st.sd_num and tr.sd_num=? order by t_date";
+		String sql = "select tr.no as no, tr.sd_num, le.l_name as l_num, st.sd_name as sd_name, t_section, t_date "
+				+ "from trainee tr, lesson le , student st "
+				+ "where tr.l_num = le.l_num and tr.sd_num = st.sd_num and tr.sd_num = ? order by t_date";
+
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -368,7 +369,7 @@ public class TraineeDAO {
 		String l_num = getLessonNum(l_name);
 		ArrayList<TraineeVO> list = new ArrayList<>();
 
-		String sql = "select tr.no as no, tr.sd_num,le.l_name as l_num,st.sd_name as sd_name,t_section,t_date"
+		String sql = "select tr.no as no, tr.sd_num,le.l_name as l_num,st.sd_name as sd_name,t_section,t_date "
 				+ "from trainee tr,lesson le,student st"
 				+ "where tr.l_num=le.l_num and tr.l_num=? and tr.sd_num=st.sd_num order by t_date";
 
@@ -416,9 +417,9 @@ public class TraineeDAO {
 	public ArrayList<TraineeVO> getTraineeStudentNameSearchList(String sd_name) throws Exception {
 		ArrayList<TraineeVO> list = new ArrayList<>();
 
-		String sql = "select tr.no as no,tr.sd_num,le.l_name as l_num,st.sd_name as sd_name,t_section,t_date"
-				+ "from trainee tr,lesson le,student st"
-				+ "where tr.l_num=le.l_num and tr.sd_num=st.sd_num and st.sd_name=? order by t_date";
+		String sql = "select tr.no as no, tr.sd_num, le.l_name as l_num, st.sd_name as sd_name, t_section, t_date "
+				+ "from trainee tr, lesson le , student st "
+				+ "where tr.l_num = le.l_num and tr.l_num = ? and tr.sd_num = st.sd_num order by t_date";
 
 		Connection con = null;
 		PreparedStatement pstmt = null;

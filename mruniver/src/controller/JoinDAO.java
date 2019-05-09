@@ -13,7 +13,7 @@ public class JoinDAO {
 
 	public boolean getManagerRegiste(JoinVO jvo) throws Exception {
 
-		String sql = "insert into managerjoin " + "(id, password, name)" + " values " + "(?,?,?)";
+		String sql = "insert into managerjoin " + "(id, password, name)" + " values " + "(?, ?, ?)";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		boolean joinSucess = false;
@@ -61,7 +61,7 @@ public class JoinDAO {
 
 	// 아이디 중복 확인
 	public boolean getIdOverlap(String idOverlap) throws Exception {
-		String sql = "select * from managerjoin where id =?";
+		String sql = "select * from managerjoin where id = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
