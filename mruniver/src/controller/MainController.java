@@ -57,7 +57,7 @@ public class MainController implements Initializable {
 		try {
 			mainPane.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>() {
 				@Override
-				public void changed(ObservableValue<? extends Tab> observble, Tab oldValue, Tab newValue) {
+				public void changed(ObservableValue<? extends Tab> observable, Tab oldValue, Tab newValue) {
 					if (newValue == subject) {
 						System.out.println("학과");
 						try {
@@ -109,6 +109,7 @@ public class MainController implements Initializable {
 			mainMtage.setScene(scene);
 			Stage oldStag = (Stage) mainPane.getScene().getWindow();
 			oldStag.close();
+			mainMtage.show();
 
 		} catch (Exception e) {
 			e.printStackTrace();
