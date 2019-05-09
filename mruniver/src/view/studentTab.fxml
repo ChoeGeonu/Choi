@@ -44,7 +44,7 @@
 			layoutY="350.0" />
 		<Button fx:id="btnStudentUpdate" text="학생정보수정" layoutX="105.0"
 			layoutY="350.0" />
-		<Button fx:id="btnStudentinit" text="취소" layoutX="200.0"
+		<Button fx:id="btnStudentInit" text="취소" layoutX="200.0"
 			layoutY="350.0" />
 		<Label text="학생 목록" layoutX="300.0" layoutY="30.0" />
 		<Button fx:id="btnStudentTatolList" text="학생 전체"

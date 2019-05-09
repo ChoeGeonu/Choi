@@ -54,7 +54,7 @@ public class LessonDAO {
 
 	// 과목 등록
 	public void getLessonRegiste(LessonVO lvo) throws Exception {
-		String sql = "insert into lesson" + "( no, l_num, l_name )" + "values" + "( lesson_seq.nextval, ?, ? )";
+		String sql = "insert into lesson " +  " (no, l_num, l_name )"  + " values "  +  " ( lesson_seq.nextval, ?, ? )";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -99,7 +99,7 @@ public class LessonDAO {
 	public ArrayList<String> getLessonColumnName() throws Exception {
 		ArrayList<String> columnName = new ArrayList<String>();
 
-		String sql = "select * from lesson";
+		String sql = "select om lesson";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -135,7 +135,7 @@ public class LessonDAO {
 
 	// 과목 수정
 	public boolean getLessonUpdate(int no, String l_num, String l_name) throws Exception {
-		String sql = "update lesson set l_num=?, l_name=?, where no=?";
+		String sql = "update lesson set l_num=?, l_name=?, where no = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		boolean lessonUpdateSucess = false;

@@ -46,13 +46,13 @@ public class StudentTabController implements Initializable {
 	@FXML
 	private TextField txtsd_email;
 	@FXML
-	private Button btnidCheck;// 아이디 체크
+	private Button btnIdCheck;// 아이디 체크
 	@FXML
 	private Button btnStudentInsert; // 학생 등록
 	@FXML
 	private Button btnStudentUpdate;// 학생 수정
 	@FXML
-	private Button btnStudentinit;// 학생 초기화
+	private Button btnStudentInit;// 학생 초기화
 	@FXML
 	private Button btnStudentTatolList;// 학생 전체 목록
 	@FXML
@@ -68,10 +68,10 @@ public class StudentTabController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 		try {
-			// 학생등록 초기화
+			// 학생등록 초기환
 			btnStudentInsert.setDisable(true);
 			btnStudentUpdate.setDisable(true);
-			btnStudentinit.setDisable(true);
+			btnStudentInit.setDisable(true);
 			studentTableView.setEditable(false);
 
 			// 학번 수정 금지
@@ -85,7 +85,7 @@ public class StudentTabController implements Initializable {
 			colStudentNo.setCellValueFactory(new PropertyValueFactory("no"));
 
 			TableColumn colStudentNum = new TableColumn("학번");
-			colStudentNum.setPrefWidth(30);
+			colStudentNum.setPrefWidth(70);
 			colStudentNum.setStyle("-fx-allignment:CENTER");
 			colStudentNum.setCellValueFactory(new PropertyValueFactory("sd_num"));
 
@@ -105,7 +105,7 @@ public class StudentTabController implements Initializable {
 			colStudentPassword.setCellValueFactory(new PropertyValueFactory<>("sd_passwd"));
 
 			TableColumn colSubjectNum = new TableColumn("학과명");
-			colSubjectNum.setPrefWidth(80);
+			colSubjectNum.setPrefWidth(70);
 			colSubjectNum.setStyle("-fx-allignment:CENTER");
 			colSubjectNum.setCellValueFactory(new PropertyValueFactory<>("s_num"));
 
@@ -115,29 +115,29 @@ public class StudentTabController implements Initializable {
 			colStudentBirthday.setCellValueFactory(new PropertyValueFactory<>("sd_birthday"));
 
 			TableColumn colStudentPhone = new TableColumn("연락처");
-			colStudentPhone.setPrefWidth(30);
+			colStudentPhone.setPrefWidth(80);
 			colStudentPhone.setStyle("-fx-allignment:CENTER");
 			colStudentPhone.setCellValueFactory(new PropertyValueFactory("sd_phone"));
 
 			TableColumn colStudentAddress = new TableColumn("주소");
-			colStudentPhone.setPrefWidth(30);
+			colStudentPhone.setPrefWidth(150);
 			colStudentPhone.setStyle("-fx-allignment:CENTER");
 			colStudentPhone.setCellValueFactory(new PropertyValueFactory("sd_address"));
 
 			TableColumn colStudentEmail = new TableColumn("이메일");
-			colStudentEmail.setPrefWidth(30);
+			colStudentEmail.setPrefWidth(80);
 			colStudentEmail.setStyle("-fx-allignment:CENTER");
 			colStudentEmail.setCellValueFactory(new PropertyValueFactory("sd_email"));
 
 			TableColumn colStudentDate = new TableColumn("등록일");
-			colStudentDate.setPrefWidth(30);
+			colStudentDate.setPrefWidth(80);
 			colStudentDate.setStyle("-fx-allignment:CENTER");
 			colStudentDate.setCellValueFactory(new PropertyValueFactory("sd_date"));
 
 			studentTableView.setItems(studentDataList);
 			studentTableView.getColumns().addAll(colStudentNo, colStudentNum, colStudentName, colStudentid,
-					colStudentPassword, colSubjectNum, colStudentBirthday, colStudentPhone, colStudentAddress,
-					colStudentEmail, colStudentDate);//오타
+					colStudentPassword, colStudentBirthday, colStudentPhone, colStudentAddress,
+					colStudentEmail, colStudentDate);
 
 			// 학생 전체 목록
 			studentTotalList();
@@ -147,10 +147,10 @@ public class StudentTabController implements Initializable {
 
 			btnStudentInsert.setOnAction(event -> handlerBtnStudentInsertAction(event)); // 학생 등록 이벤트
 			cbx_subjectName.setOnAction(event -> handlerCbx_subjectNameActoion(event));// 학생 등록 탭 학과 선택 이벤트
-			btnidCheck.setOnAction(event -> handlerBtnIdCheckAction(event));// 아이디 중복 체크
+			btnIdCheck.setOnAction(event -> handlerBtnIdCheckAction(event));// 아이디 중복 체크
 			studentTableView.setOnMouseClicked(event -> handlerStudentTableViewActoion(event)); // 학생 테이블 뷰 더블 클릭
 			btnStudentUpdate.setOnAction(event -> handlerBtnStudentUpdateAction(event)); // 학생 정보 수정
-			btnStudentinit.setOnAction(event -> handlerBtnStudentInitAction(event)); // 학생 초기화
+			btnStudentInit.setOnAction(event -> handlerBtnStudentInitAction(event)); // 학생 초기화
 			btnStudentTatolList.setOnAction(event -> handlerBtnStudentTatolListAction(event)); // 학생 전체 목록
 
 		} catch (Exception e) {
@@ -212,30 +212,30 @@ public class StudentTabController implements Initializable {
 	// 아이디 중복 체크
 	public void handlerBtnIdCheckAction(ActionEvent event) {
 		btnStudentInsert.setDisable(false);
-		btnidCheck.setDisable(true);
+		btnIdCheck.setDisable(true);
 
 		StudentDAO sDao = null;
 
-		String searchid = "";
+		String searchld = "";
 		boolean searchResult = true;
 		try {
-			searchid = txtsd_id.getText().trim();
+			searchld = txtsd_id.getText().trim();
 			sDao = new StudentDAO();
-			searchResult = (boolean) sDao.getStudentidOverlap(searchid);
+			searchResult = (boolean) sDao.getStudentidOverlap(searchld);
 
-			if (!searchResult && !searchid.equals("")) {
+			if (!searchResult && !searchld.equals("")) {
 				txtsd_id.setDisable(true);
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("아이디 중복 검사");
-				alert.setHeaderText(searchid + " 를 사용 할수있습니다");
+				alert.setHeaderText(searchld + " 를 사용 할수있습니다");
 				alert.setContentText("패스워드를 입력 하세요");
 				alert.showAndWait();
 
 				btnStudentInsert.setDisable(false);
-				btnidCheck.setDisable(true);
-			} else if (searchid.equals("")) {
+				btnIdCheck.setDisable(true);
+			} else if (searchld.equals("")) {
 				btnStudentInsert.setDisable(true);
-				btnidCheck.setDisable(false);
+				btnIdCheck.setDisable(false);
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("아이디 중복 검색");
 				alert.setHeaderText("아이디를 입력 하시오");
@@ -243,12 +243,12 @@ public class StudentTabController implements Initializable {
 				alert.showAndWait();
 			} else {
 				btnStudentInsert.setDisable(true);
-				btnidCheck.setDisable(false);
+				btnIdCheck.setDisable(false);
 				txtsd_id.clear();
 
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("아이디 중복 검사");
-				alert.setHeaderText(searchid + " 를 사용할수 없습니다");
+				alert.setHeaderText(searchld + " 를 사용할수 없습니다");
 				alert.setContentText("다른 것을 입력 하세요");
 				alert.showAndWait();
 
@@ -336,10 +336,10 @@ public class StudentTabController implements Initializable {
 				txtsd_name.setEditable(false);
 				txtsd_id.setEditable(false);
 
-				btnidCheck.setDisable(true);
+				btnIdCheck.setDisable(true);
 				cbx_subjectName.setDisable(true);
 				btnStudentUpdate.setDisable(false);
-				btnStudentinit.setDisable(false);
+				btnStudentInit.setDisable(false);
 				btnStudentInsert.setDisable(true);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -376,10 +376,10 @@ public class StudentTabController implements Initializable {
 			txtsd_name.setEditable(true);
 			txtsd_id.setEditable(true);
 
-			btnidCheck.setDisable(false);
+			btnIdCheck.setDisable(false);
 			cbx_subjectName.setDisable(false);
 			btnStudentUpdate.setDisable(true);
-			btnStudentinit.setDisable(true);
+			btnStudentInit.setDisable(true);
 			btnStudentInsert.setDisable(true);
 
 		} catch (Exception e) {
@@ -414,10 +414,10 @@ public class StudentTabController implements Initializable {
 				txtsd_name.setEditable(true);
 				txtsd_id.setEditable(true);
 
-				btnidCheck.setDisable(false);
+				btnIdCheck.setDisable(false);
 				cbx_subjectName.setDisable(false);
 				btnStudentUpdate.setDisable(true);
-				btnStudentinit.setDisable(true);
+				btnStudentInit.setDisable(true);
 				btnStudentInsert.setDisable(true);
 
 			}

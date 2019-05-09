@@ -15,7 +15,7 @@ import model.SubjectVO;
 public class StudentDAO {
 	// 로그인 학생 이름
 	public String getLoginName(String loginid) throws Exception {
-		String sql = "select sd_name from student where sd_id=?";
+		String sql = "select sd_name from student where sd_id = ? ";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -90,8 +90,8 @@ public class StudentDAO {
 	public ArrayList<StudentVO> getStudentTotalList() throws Exception {
 		ArrayList<StudentVO> list = new ArrayList<>();
 
-		String sql = "select st.no as no , sd_num, sd_name,sd_id,sd_passwd, su.s_name as s_num, sd_phone, sd_address, sd_email,sd_date"
-				+ "from STUDENT st, SUBJECT su" + "where st.s_num = su.snum" + " order by no";
+		String sql = "select st.no as no, sd_num, sd_name,sd_id, sd_passwd, su.s_name as s_num, sd_birthday, sd_phone, sd_address, sd_email, sd_date "
+				+ " from STUDENT st, SUBJECT su " + " where st.s_num = su.s_num " + " order by no";
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -138,9 +138,7 @@ public class StudentDAO {
 
 	// 동일한 학과 학생 일련번호
 	public String getStudentCount(String subeectNum) throws Exception {
-
-		String sql = "select LPAD(count(*)+1,4,'0') as studentCount from student where s_num = ?";// 오타 수정
-
+		String sql = "select LPAD(count(*)+1,4,'0') as studentCount from student where s_num = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -175,7 +173,7 @@ public class StudentDAO {
 
 	// 학생아이디 중복 체크
 	public boolean getStudentidOverlap(String idOverlap) throws Exception {
-		String sql = "select * from student where sd_id=?";
+		String sql = "select * from student where sd_id = ? ";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
