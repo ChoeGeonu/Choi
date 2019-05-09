@@ -46,13 +46,13 @@ public class StudentTabController implements Initializable {
 	@FXML
 	private TextField txtsd_email;
 	@FXML
-	private Button btnidCheck;// 아이디 체크
+	private Button btnIdCheck;// 아이디 체크
 	@FXML
 	private Button btnStudentInsert; // 학생 등록
 	@FXML
 	private Button btnStudentUpdate;// 학생 수정
 	@FXML
-	private Button btnStudentinit;// 학생 초기화
+	private Button btnStudentInit;// 학생 초기화
 	@FXML
 	private Button btnStudentTatolList;// 학생 전체 목록
 	@FXML
@@ -69,9 +69,9 @@ public class StudentTabController implements Initializable {
 
 		try {
 			// 학생등록 초기환
-			btnStudentinit.setDisable(true);
+			btnStudentInsert.setDisable(true);
 			btnStudentUpdate.setDisable(true);
-			btnStudentinit.setDisable(true);
+			btnStudentInit.setDisable(true);
 			studentTableView.setEditable(false);
 
 			// 학번 수정 금지
@@ -147,10 +147,10 @@ public class StudentTabController implements Initializable {
 
 			btnStudentInsert.setOnAction(event -> handlerBtnStudentInsertAction(event)); // 학생 등록 이벤트
 			cbx_subjectName.setOnAction(event -> handlerCbx_subjectNameActoion(event));// 학생 등록 탭 학과 선택 이벤트
-			btnidCheck.setOnAction(event -> handlerBtnIdCheckAction(event));// 아이디 중복 체크
+			btnIdCheck.setOnAction(event -> handlerBtnIdCheckAction(event));// 아이디 중복 체크
 			studentTableView.setOnMouseClicked(event -> handlerStudentTableViewActoion(event)); // 학생 테이블 뷰 더블 클릭
 			btnStudentUpdate.setOnAction(event -> handlerBtnStudentUpdateAction(event)); // 학생 정보 수정
-			btnStudentinit.setOnAction(event -> handlerBtnStudentInitAction(event)); // 학생 초기화
+			btnStudentInit.setOnAction(event -> handlerBtnStudentInitAction(event)); // 학생 초기화
 			btnStudentTatolList.setOnAction(event -> handlerBtnStudentTatolListAction(event)); // 학생 전체 목록
 
 		} catch (Exception e) {
@@ -212,7 +212,7 @@ public class StudentTabController implements Initializable {
 	// 아이디 중복 체크
 	public void handlerBtnIdCheckAction(ActionEvent event) {
 		btnStudentInsert.setDisable(false);
-		btnidCheck.setDisable(true);
+		btnIdCheck.setDisable(true);
 
 		StudentDAO sDao = null;
 
@@ -232,10 +232,10 @@ public class StudentTabController implements Initializable {
 				alert.showAndWait();
 
 				btnStudentInsert.setDisable(false);
-				btnidCheck.setDisable(true);
+				btnIdCheck.setDisable(true);
 			} else if (searchld.equals("")) {
 				btnStudentInsert.setDisable(true);
-				btnidCheck.setDisable(false);
+				btnIdCheck.setDisable(false);
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("아이디 중복 검색");
 				alert.setHeaderText("아이디를 입력 하시오");
@@ -243,7 +243,7 @@ public class StudentTabController implements Initializable {
 				alert.showAndWait();
 			} else {
 				btnStudentInsert.setDisable(true);
-				btnidCheck.setDisable(false);
+				btnIdCheck.setDisable(false);
 				txtsd_id.clear();
 
 				Alert alert = new Alert(AlertType.INFORMATION);
@@ -336,10 +336,10 @@ public class StudentTabController implements Initializable {
 				txtsd_name.setEditable(false);
 				txtsd_id.setEditable(false);
 
-				btnidCheck.setDisable(true);
+				btnIdCheck.setDisable(true);
 				cbx_subjectName.setDisable(true);
 				btnStudentUpdate.setDisable(false);
-				btnStudentinit.setDisable(false);
+				btnStudentInit.setDisable(false);
 				btnStudentInsert.setDisable(true);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -376,10 +376,10 @@ public class StudentTabController implements Initializable {
 			txtsd_name.setEditable(true);
 			txtsd_id.setEditable(true);
 
-			btnidCheck.setDisable(false);
+			btnIdCheck.setDisable(false);
 			cbx_subjectName.setDisable(false);
 			btnStudentUpdate.setDisable(true);
-			btnStudentinit.setDisable(true);
+			btnStudentInit.setDisable(true);
 			btnStudentInsert.setDisable(true);
 
 		} catch (Exception e) {
@@ -414,10 +414,10 @@ public class StudentTabController implements Initializable {
 				txtsd_name.setEditable(true);
 				txtsd_id.setEditable(true);
 
-				btnidCheck.setDisable(false);
+				btnIdCheck.setDisable(false);
 				cbx_subjectName.setDisable(false);
 				btnStudentUpdate.setDisable(true);
-				btnStudentinit.setDisable(true);
+				btnStudentInit.setDisable(true);
 				btnStudentInsert.setDisable(true);
 
 			}

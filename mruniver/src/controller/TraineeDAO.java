@@ -147,7 +147,7 @@ public class TraineeDAO {
 	public ArrayList<TraineeVO> getTraineeTotalList(String sd_num) throws Exception {
 		ArrayList<TraineeVO> list = new ArrayList<>();
 
-		String sql = "select tr.no as no sd_num,le.l_name as l_num, t_section,t_date" + "from trainee tr,lesson le"
+		String sql = "select tr.no as no,sd_num,le.l_name as l_num, t_section,t_date" + "from trainee tr,lesson le"
 				+ "where tr.l_num=le.l_num and tr.sd_num=?" + "order by t_date";
 		Connection con = null;
 		PreparedStatement pstmt = null;

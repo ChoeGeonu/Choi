@@ -15,7 +15,7 @@ import model.SubjectVO;
 public class StudentDAO {
 	// 로그인 학생 이름
 	public String getLoginName(String loginid) throws Exception {
-		String sql = "select sd_name from from student where sd_id=?";
+		String sql = "select sd_name from student where sd_id=?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
