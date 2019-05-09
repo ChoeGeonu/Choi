@@ -22,7 +22,7 @@
 			<Label text="관리자 등록" />
 			<Separator prefHeight="30" prefWidth="400" />
 			<HBox alignment="CENTER">
-				<Label text="아 이 이: " />
+				<Label text="아 이 디: " />
 				<TextField fx:id="txtId" />
 			</HBox>
 			<HBox alignment="CENTER">

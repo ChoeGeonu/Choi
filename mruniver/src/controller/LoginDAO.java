@@ -71,7 +71,7 @@ public class LoginDAO {
 					pstmt.close();
 				if (con != null)
 					con.close();
-			} catch (SQLException e2) {
+			} catch (SQLException e) {
 			}
 		}
 		return loginName;

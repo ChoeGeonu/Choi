@@ -52,7 +52,7 @@ public class JoinController implements Initializable {
 	public void handlerBtnOverlapActoion(ActionEvent event) {
 
 		btnJoin.setDisable(false);
-		btnOverlap.setDisable(false);
+		btnOverlap.setDisable(true);
 
 		JoinDAO jDao = null;
 
@@ -75,6 +75,7 @@ public class JoinController implements Initializable {
 				btnOverlap.setDisable(true);
 				txtPassword.setEditable(true);
 				txtPasswordRepeat.setEditable(true);
+				txtPassword.requestFocus();
 			} else if (searchld.equals("")) {
 				btnJoin.setDisable(true);
 				btnOverlap.setDisable(false);
