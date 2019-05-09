@@ -54,7 +54,11 @@ public class LessonDAO {
 
 	// 과목 등록
 	public void getLessonRegiste(LessonVO lvo) throws Exception {
+<<<<<<< HEAD
 		String sql = "insert into lesson " + "(no, l_num, l_name)" + " values " + "(lesson_seq.nextval, ?, ?)";
+=======
+		String sql = "insert into lesson" + "( no, l_num, l_name )" + "values" + "( lesson_seq.nextval, ?, ? )";
+>>>>>>> a554a20ada297d1932279f124e8b4ee67e8ed6f3
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		try {

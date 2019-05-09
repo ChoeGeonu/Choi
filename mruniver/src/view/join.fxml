@@ -35,7 +35,11 @@
 			</HBox>
 			<HBox alignment="CENTER">
 				<Label text="관리자 이름:  " />
+<<<<<<< HEAD
+				<TextField  fx:id="txtName" />
+=======
 				<TextField fx:id="txtName" />
+>>>>>>> a6c45b919d6c68769e92b42a5837da5015ced70e
 			</HBox>
 			<HBox alignment="CENTER">
 				<padding>

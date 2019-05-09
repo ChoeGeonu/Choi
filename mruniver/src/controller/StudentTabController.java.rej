@@ -1,0 +1,10 @@
+diff a/mruniver/src/controller/StudentTabController.java b/mruniver/src/controller/StudentTabController.java	(rejected hunks)
+@@ -85,7 +85,7 @@
+ 			colStudentNo.setCellValueFactory(new PropertyValueFactory("no"));
+ 
+ 			TableColumn colStudentNum = new TableColumn("학번");
+-			colStudentNum.setPrefWidth(30);
++			colStudentNum.setPrefWidth(70);
+ 			colStudentNum.setStyle("-fx-allignment:CENTER");
+ 			colStudentNum.setCellValueFactory(new PropertyValueFactory("sd_num"));
+ 

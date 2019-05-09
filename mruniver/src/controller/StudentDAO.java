@@ -90,8 +90,13 @@ public class StudentDAO {
 	public ArrayList<StudentVO> getStudentTotalList() throws Exception {
 		ArrayList<StudentVO> list = new ArrayList<>();
 
+<<<<<<< HEAD
 		String sql = "select st.no as no, sd_num, sd_name, sd_id, sd_passwd, su.s_name as s_num, sd_birthday, sd_phone, sd_address, sd_email, sd_date"
 				+ " from STUDENT st, SUBJECT su" + " where st.s_num = su.s_num" + " order by no";
+=======
+		String sql = "select st.no as no , sd_num, sd_name,sd_id,sd_passwd, su.s_name as s_num, sd_phone, sd_address, sd_email,sd_date"
+				+ "from STUDENT st, SUBJECT su" + "where st.s_num = su.snum" + " order by no";
+>>>>>>> a554a20ada297d1932279f124e8b4ee67e8ed6f3
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -138,7 +143,13 @@ public class StudentDAO {
 
 	// 동일한 학과 학생 일련번호
 	public String getStudentCount(String subeectNum) throws Exception {
+<<<<<<< HEAD
 		String sql = "select LPAD(count(*)+1, 4,'0') as studentCount from student where s_num = ?";
+=======
+
+		String sql = "select LPAD(count(*)+1,4,'0') as studentCount from student where s_num = ?";// 오타 수정
+
+>>>>>>> a554a20ada297d1932279f124e8b4ee67e8ed6f3
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -421,7 +432,7 @@ public class StudentDAO {
 					con.close();
 			} catch (SQLException se) {
 			}
-			
+
 		}
 		return list;
 	}
