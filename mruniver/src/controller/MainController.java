@@ -134,6 +134,7 @@ public class MainController implements Initializable {
 		alert.setContentText("확인 버튼을 클릭하면 미래 대학교 수강신청 프로그램 종료 합니다");
 		alert.setResizable(false);
 		alert.showAndWait();
+		Platform.exit();
 	}
 
 }

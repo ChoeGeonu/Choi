@@ -69,7 +69,7 @@ public class StudentTabController implements Initializable {
 
 		try {
 			// 학생등록 초기화
-			btnStudentinit.setDisable(true);
+			btnStudentInsert.setDisable(true);
 			btnStudentUpdate.setDisable(true);
 			btnStudentinit.setDisable(true);
 			studentTableView.setEditable(false);
@@ -136,8 +136,8 @@ public class StudentTabController implements Initializable {
 
 			studentTableView.setItems(studentDataList);
 			studentTableView.getColumns().addAll(colStudentNo, colStudentNum, colStudentName, colStudentid,
-					colStudentPassword, colStudentNum, colStudentBirthday, colStudentPhone, colStudentAddress,
-					colStudentEmail, colStudentDate);
+					colStudentPassword, colSubjectNum, colStudentBirthday, colStudentPhone, colStudentAddress,
+					colStudentEmail, colStudentDate);//오타
 
 			// 학생 전체 목록
 			studentTotalList();
@@ -216,24 +216,24 @@ public class StudentTabController implements Initializable {
 
 		StudentDAO sDao = null;
 
-		String searchld = "";
+		String searchid = "";
 		boolean searchResult = true;
 		try {
-			searchld = txtsd_id.getText().trim();
+			searchid = txtsd_id.getText().trim();
 			sDao = new StudentDAO();
-			searchResult = (boolean) sDao.getStudentidOverlap(searchld);
+			searchResult = (boolean) sDao.getStudentidOverlap(searchid);
 
-			if (!searchResult && !searchld.equals("")) {
+			if (!searchResult && !searchid.equals("")) {
 				txtsd_id.setDisable(true);
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("아이디 중복 검사");
-				alert.setHeaderText(searchld + " 를 사용 할수있습니다");
+				alert.setHeaderText(searchid + " 를 사용 할수있습니다");
 				alert.setContentText("패스워드를 입력 하세요");
 				alert.showAndWait();
 
 				btnStudentInsert.setDisable(false);
 				btnidCheck.setDisable(true);
-			} else if (searchld.equals("")) {
+			} else if (searchid.equals("")) {
 				btnStudentInsert.setDisable(true);
 				btnidCheck.setDisable(false);
 				Alert alert = new Alert(AlertType.WARNING);
@@ -248,7 +248,7 @@ public class StudentTabController implements Initializable {
 
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("아이디 중복 검사");
-				alert.setHeaderText(searchld + " 를 사용할수 없습니다");
+				alert.setHeaderText(searchid + " 를 사용할수 없습니다");
 				alert.setContentText("다른 것을 입력 하세요");
 				alert.showAndWait();
 

@@ -91,7 +91,7 @@ public class StudentDAO {
 		ArrayList<StudentVO> list = new ArrayList<>();
 
 		String sql = "select st.no as no , sd_num, sd_name,sd_id,sd_passwd, su.s_name as s_num, sd_phone, sd_address, sd_email,sd_date"
-				+ "from STUDENT st, SUBJECT su" + "where st.s_num = su.snum" + "order by no";
+				+ "from STUDENT st, SUBJECT su" + "where st.s_num = su.snum" + " order by no";
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -173,7 +173,7 @@ public class StudentDAO {
 
 	// 학생아이디 중복 체크
 	public boolean getStudentidOverlap(String idOverlap) throws Exception {
-		String sql = "select * from student wher sd_id=?";
+		String sql = "select * from student where sd_id=?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
