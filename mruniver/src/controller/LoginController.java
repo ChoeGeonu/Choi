@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 
 import javafx.scene.image.Image;
 
-import java.awt.Event;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -67,8 +67,8 @@ public class LoginController implements Initializable {
 
 	// 학생 라디오 버튼 이벤트
 	public void handlerRbStudentActoion(ActionEvent event) {
-		URL srtimg = getClass().getResource("../image/student.png");
-		Image image = new Image(srtimg.toString());
+		URL srtImg = getClass().getResource("../image/student.png");
+		Image image = new Image(srtImg.toString());
 		iconimg.setImage(image);
 		lblLogin.setText("학생로그인");
 		btnJoin.setDisable(true);
@@ -77,8 +77,8 @@ public class LoginController implements Initializable {
 
 	// 관리자 라디오 버튼 이벤트
 	public void handlerRbManagerActoion(ActionEvent event) {
-		URL srtimg = getClass().getResource("../image/manager.png");
-		Image image = new Image(srtimg.toString());
+		URL srtImg = getClass().getResource("../image/manager.png");
+		Image image = new Image(srtImg.toString());
 		iconimg.setImage(image);
 		lblLogin.setText("관리자 로그인");
 		btnJoin.setDisable(false);
