@@ -72,7 +72,7 @@ public class JoinDAO {
 			pstmt.setString(1, idOverlap);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				idOverlapResult = true;
+				idOverlapResult = true;//중복된 아이디가 있다.
 			}
 		} catch (SQLException e) {
 			System.out.println("e=[ " + e + "]");
