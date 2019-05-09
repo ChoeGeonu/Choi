@@ -54,7 +54,15 @@ public class LessonDAO {
 
 	// 과목 등록
 	public void getLessonRegiste(LessonVO lvo) throws Exception {
+<<<<<<< HEAD
 		String sql = "insert into lesson " +  " (no, l_num, l_name )"  + " values "  +  " ( lesson_seq.nextval, ?, ? )";
+=======
+<<<<<<< HEAD
+		String sql = "insert into lesson " + "(no, l_num, l_name)" + " values " + "(lesson_seq.nextval, ?, ?)";
+=======
+		String sql = "insert into lesson" + "( no, l_num, l_name )" + "values" + "( lesson_seq.nextval, ?, ? )";
+>>>>>>> a554a20ada297d1932279f124e8b4ee67e8ed6f3
+>>>>>>> 3c8cbb20bc9eb08ed65560c8ddc8690c8fc31866
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -135,7 +143,11 @@ public class LessonDAO {
 
 	// 과목 수정
 	public boolean getLessonUpdate(int no, String l_num, String l_name) throws Exception {
+<<<<<<< HEAD
 		String sql = "update lesson set l_num=?, l_name=?, where no = ?";
+=======
+		String sql = "update lesson set l_num=?, l_name=? where no=?";
+>>>>>>> 3c8cbb20bc9eb08ed65560c8ddc8690c8fc31866
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		boolean lessonUpdateSucess = false;
@@ -183,7 +195,7 @@ public class LessonDAO {
 	// 과목 삭제
 	public boolean getLessonDelete(int no) throws Exception {
 		StringBuffer sql = new StringBuffer();
-		sql.append("delete from lesson where no=?");
+		sql.append("delete from lesson where no = ?");
 
 		Connection con = null;
 		PreparedStatement pstmt = null;

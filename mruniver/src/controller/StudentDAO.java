@@ -15,7 +15,11 @@ import model.SubjectVO;
 public class StudentDAO {
 	// 로그인 학생 이름
 	public String getLoginName(String loginid) throws Exception {
+<<<<<<< HEAD
 		String sql = "select sd_name from student where sd_id = ? ";
+=======
+		String sql = "select sd_name from student where sd_id = ?";
+>>>>>>> 3c8cbb20bc9eb08ed65560c8ddc8690c8fc31866
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -90,8 +94,18 @@ public class StudentDAO {
 	public ArrayList<StudentVO> getStudentTotalList() throws Exception {
 		ArrayList<StudentVO> list = new ArrayList<>();
 
+<<<<<<< HEAD
 		String sql = "select st.no as no, sd_num, sd_name,sd_id, sd_passwd, su.s_name as s_num, sd_birthday, sd_phone, sd_address, sd_email, sd_date "
 				+ " from STUDENT st, SUBJECT su " + " where st.s_num = su.s_num " + " order by no";
+=======
+<<<<<<< HEAD
+		String sql = "select st.no as no, sd_num, sd_name, sd_id, sd_passwd, su.s_name as s_num, sd_birthday, sd_phone, sd_address, sd_email, sd_date"
+				+ " from STUDENT st, SUBJECT su" + " where st.s_num = su.s_num" + " order by no";
+=======
+		String sql = "select st.no as no , sd_num, sd_name,sd_id,sd_passwd, su.s_name as s_num, sd_phone, sd_address, sd_email,sd_date"
+				+ "from STUDENT st, SUBJECT su" + "where st.s_num = su.snum" + " order by no";
+>>>>>>> a554a20ada297d1932279f124e8b4ee67e8ed6f3
+>>>>>>> 3c8cbb20bc9eb08ed65560c8ddc8690c8fc31866
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -138,7 +152,17 @@ public class StudentDAO {
 
 	// 동일한 학과 학생 일련번호
 	public String getStudentCount(String subeectNum) throws Exception {
+<<<<<<< HEAD
 		String sql = "select LPAD(count(*)+1,4,'0') as studentCount from student where s_num = ?";
+=======
+<<<<<<< HEAD
+		String sql = "select LPAD(count(*)+1, 4,'0') as studentCount from student where s_num = ?";
+=======
+
+		String sql = "select LPAD(count(*)+1,4,'0') as studentCount from student where s_num = ?";// 오타 수정
+
+>>>>>>> a554a20ada297d1932279f124e8b4ee67e8ed6f3
+>>>>>>> 3c8cbb20bc9eb08ed65560c8ddc8690c8fc31866
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -173,7 +197,11 @@ public class StudentDAO {
 
 	// 학생아이디 중복 체크
 	public boolean getStudentidOverlap(String idOverlap) throws Exception {
+<<<<<<< HEAD
 		String sql = "select * from student where sd_id = ? ";
+=======
+		String sql = "select * from student where sd_id = ?";
+>>>>>>> 3c8cbb20bc9eb08ed65560c8ddc8690c8fc31866
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

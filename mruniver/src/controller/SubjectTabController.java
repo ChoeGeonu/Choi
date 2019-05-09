@@ -44,7 +44,7 @@ public class SubjectTabController implements Initializable {
 
 	public static ObservableList<SubjectVO> subjectDataList = FXCollections.observableArrayList();
 	ObservableList<SubjectVO> selectSubject = null;// 테이블에서 선택한 정보 저장
-	int selectedindex;// 테이블에서 선택한 학과 정보 인덱스 저장
+	int selectedIndex;// 테이블에서 선택한 학과 정보 인덱스 저장
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -62,12 +62,12 @@ public class SubjectTabController implements Initializable {
 			colNo.setStyle("-fx-allignment:CENTER");
 			colNo.setCellValueFactory(new PropertyValueFactory("no"));
 
-			TableColumn colSNum = new TableColumn("학과 번호.");
+			TableColumn colSNum = new TableColumn("학	과 번호.");
 			colSNum.setPrefWidth(90);
 			colSNum.setStyle("-fx-allignment:CENTER");
 			colSNum.setCellValueFactory(new PropertyValueFactory("s_num"));
 
-			TableColumn colSName = new TableColumn("학과명.");
+			TableColumn colSName = new TableColumn("학 과 명.");
 			colSName.setPrefWidth(50);
 			colSName.setStyle("-fx-allignment:CENTER");
 			colSName.setCellValueFactory(new PropertyValueFactory("s_name"));
@@ -87,7 +87,7 @@ public class SubjectTabController implements Initializable {
 			subjectTableView.setOnMouseClicked(event -> handlerSubjectTableViewActoion(event)); // 학과 테이블뷰 더블 클릭 선댁
 			btnRead.setOnAction(event -> handlerBtnReadAction(event)); // 테이블 뷰 읽기
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 
 	}
@@ -97,7 +97,7 @@ public class SubjectTabController implements Initializable {
 		if (event.getClickCount() == 2) {
 			try {
 				selectSubject = subjectTableView.getSelectionModel().getSelectedItems();
-				selectedindex = selectSubject.get(0).getNo();
+				selectedIndex = selectSubject.get(0).getNo();
 				String selectedS_num = selectSubject.get(0).getS_name();
 				String selectedS_name = selectSubject.get(0).getS_name();
 
@@ -184,7 +184,7 @@ public class SubjectTabController implements Initializable {
 			boolean sucess;
 
 			SubjectDAO sdao = new SubjectDAO();
-			sucess = sdao.getSubjectUpdate(selectedindex, txtSubjectNum.getText().trim(),
+			sucess = sdao.getSubjectUpdate(selectedIndex, txtSubjectNum.getText().trim(),
 					txtSubjectName.getText().trim());
 
 			if (sucess) {
@@ -208,7 +208,7 @@ public class SubjectTabController implements Initializable {
 			boolean sucess;
 
 			SubjectDAO sdao = new SubjectDAO();
-			sucess = sdao.getSubjectDelete(selectedindex);
+			sucess = sdao.getSubjectDelete(selectedIndex);
 			if (sucess) {
 				subjectDataList.removeAll(subjectDataList);
 				subjectTotalList();

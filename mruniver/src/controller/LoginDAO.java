@@ -44,7 +44,7 @@ public class LoginDAO {
 	}
 
 	public String getLoginName(String loginid) throws Exception {
-		String sql = "select name from managerjoin where id =?";
+		String sql = "select name from managerjoin where id = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
