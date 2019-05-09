@@ -99,7 +99,7 @@ public class LessonDAO {
 	public ArrayList<String> getLessonColumnName() throws Exception {
 		ArrayList<String> columnName = new ArrayList<String>();
 
-		String sql = "select*from lesson";
+		String sql = "select * from lesson";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

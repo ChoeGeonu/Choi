@@ -15,7 +15,7 @@ import model.SubjectVO;
 public class StudentDAO {
 	// 로그인 학생 이름
 	public String getLoginName(String loginid) throws Exception {
-		String sql = "select sd_name from from student where sd_id=?";
+		String sql = "select sd_name from student where sd_id=?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -138,7 +138,7 @@ public class StudentDAO {
 
 	// 동일한 학과 학생 일련번호
 	public String getStudentCount(String subeectNum) throws Exception {
-		String sql = "sele LPAD(count(*)+1,4,'0') as studentCount from student where s+num = ?";
+		String sql = "select LPAD(count(*)+1,4,'0') as studentCount from student where s_num = ?";//오타 수정
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

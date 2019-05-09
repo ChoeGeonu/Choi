@@ -13,7 +13,7 @@ public class JoinDAO {
 
 	public boolean getManagerRegiste(JoinVO jvo) throws Exception {
 
-		String sql = "insert managerjoin " + "(id, password, name)" + " values " + "(?,?,?)";
+		String sql = "insert into managerjoin " + "(id, password, name)" + " values " + "(?,?,?)";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		boolean joinSucess = false;

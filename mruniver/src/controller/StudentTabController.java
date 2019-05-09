@@ -68,7 +68,7 @@ public class StudentTabController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 		try {
-			// 학생등록 초기환
+			// 학생등록 초기화
 			btnStudentinit.setDisable(true);
 			btnStudentUpdate.setDisable(true);
 			btnStudentinit.setDisable(true);
