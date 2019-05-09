@@ -85,7 +85,7 @@ public class StudentTabController implements Initializable {
 			colStudentNo.setCellValueFactory(new PropertyValueFactory("no"));
 
 			TableColumn colStudentNum = new TableColumn("학번");
-			colStudentNum.setPrefWidth(30);
+			colStudentNum.setPrefWidth(70);
 			colStudentNum.setStyle("-fx-allignment:CENTER");
 			colStudentNum.setCellValueFactory(new PropertyValueFactory("sd_num"));
 
@@ -105,7 +105,7 @@ public class StudentTabController implements Initializable {
 			colStudentPassword.setCellValueFactory(new PropertyValueFactory<>("sd_passwd"));
 
 			TableColumn colSubjectNum = new TableColumn("학과명");
-			colSubjectNum.setPrefWidth(80);
+			colSubjectNum.setPrefWidth(70);
 			colSubjectNum.setStyle("-fx-allignment:CENTER");
 			colSubjectNum.setCellValueFactory(new PropertyValueFactory<>("s_num"));
 
@@ -115,28 +115,28 @@ public class StudentTabController implements Initializable {
 			colStudentBirthday.setCellValueFactory(new PropertyValueFactory<>("sd_birthday"));
 
 			TableColumn colStudentPhone = new TableColumn("연락처");
-			colStudentPhone.setPrefWidth(30);
+			colStudentPhone.setPrefWidth(80);
 			colStudentPhone.setStyle("-fx-allignment:CENTER");
 			colStudentPhone.setCellValueFactory(new PropertyValueFactory("sd_phone"));
 
 			TableColumn colStudentAddress = new TableColumn("주소");
-			colStudentPhone.setPrefWidth(30);
+			colStudentPhone.setPrefWidth(150);
 			colStudentPhone.setStyle("-fx-allignment:CENTER");
 			colStudentPhone.setCellValueFactory(new PropertyValueFactory("sd_address"));
 
 			TableColumn colStudentEmail = new TableColumn("이메일");
-			colStudentEmail.setPrefWidth(30);
+			colStudentEmail.setPrefWidth(80);
 			colStudentEmail.setStyle("-fx-allignment:CENTER");
 			colStudentEmail.setCellValueFactory(new PropertyValueFactory("sd_email"));
 
 			TableColumn colStudentDate = new TableColumn("등록일");
-			colStudentDate.setPrefWidth(30);
+			colStudentDate.setPrefWidth(80);
 			colStudentDate.setStyle("-fx-allignment:CENTER");
 			colStudentDate.setCellValueFactory(new PropertyValueFactory("sd_date"));
 
 			studentTableView.setItems(studentDataList);
 			studentTableView.getColumns().addAll(colStudentNo, colStudentNum, colStudentName, colStudentid,
-					colStudentPassword, colStudentNum, colStudentBirthday, colStudentPhone, colStudentAddress,
+					colStudentPassword, colStudentBirthday, colStudentPhone, colStudentAddress,
 					colStudentEmail, colStudentDate);
 
 			// 학생 전체 목록

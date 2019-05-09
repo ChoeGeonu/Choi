@@ -33,7 +33,7 @@ public class TraineeTotalTabController implements Initializable {
 	@FXML
 	Label lblCount;
 	@FXML
-	TableView<TraineeVO> traineeTableView = new TableView();
+	TableView<TraineeVO> traineeTatolTableView = new TableView();
 
 	ObservableList<TraineeVO> traineeDataList = FXCollections.observableArrayList();
 
@@ -72,8 +72,8 @@ public class TraineeTotalTabController implements Initializable {
 			colTDate.setStyle("-fx-allignment:CENTER");
 			colTDate.setCellValueFactory(new PropertyValueFactory<>("t_date"));
 
-			traineeTableView.setItems(traineeDataList);
-			traineeTableView.getColumns().addAll(colNo, colSdNum, colSdName, colLNum, colTSection, colTDate);
+			traineeTatolTableView.setItems(traineeDataList);
+			traineeTatolTableView.getColumns().addAll(colNo, colSdNum, colSdName, colLNum, colTSection, colTDate);
 
 			// 수강 전체 목록
 			traineeTotalList();

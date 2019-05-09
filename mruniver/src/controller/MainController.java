@@ -57,7 +57,7 @@ public class MainController implements Initializable {
 		try {
 			mainPane.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>() {
 				@Override
-				public void changed(ObservableValue<? extends Tab> observble, Tab oldValue, Tab newValue) {
+				public void changed(ObservableValue<? extends Tab> observable, Tab oldValue, Tab newValue) {
 					if (newValue == subject) {
 						System.out.println("학과");
 						try {
@@ -109,6 +109,7 @@ public class MainController implements Initializable {
 			mainMtage.setScene(scene);
 			Stage oldStag = (Stage) mainPane.getScene().getWindow();
 			oldStag.close();
+			mainMtage.show();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -134,6 +135,7 @@ public class MainController implements Initializable {
 		alert.setContentText("확인 버튼을 클릭하면 미래 대학교 수강신청 프로그램 종료 합니다");
 		alert.setResizable(false);
 		alert.showAndWait();
+		Platform.exit();
 	}
 
 }

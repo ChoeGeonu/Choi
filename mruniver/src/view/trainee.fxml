@@ -45,7 +45,7 @@
 	</top>
 
 	<center>
-		<TabPane tabClosingPolicy="UNAVAILABLE" fx:id="mainPane">
+		<TabPane tabClosingPolicy="UNAVAILABLE">
 			<tabs>
 				<Tab text="수강 신청">
 					<content>
@@ -83,7 +83,7 @@
 									layoutY="290.0" text="수강 취소" />
 								<Button fx:id="btnTraineeExit" layoutX="207.0"
 									layoutY="290.0" text="종료" />
-								<Label text="수간 신청 목록" layoutX="350.0" layoutY="30.0" />
+								<Label text="수강 신청 목록" layoutX="350.0" layoutY="30.0" />
 								<TableView fx:id="traineeTableView" layoutX="350.0"
 									layoutY="50.0" prefHeight="370" prefWidth="500">
 								</TableView>

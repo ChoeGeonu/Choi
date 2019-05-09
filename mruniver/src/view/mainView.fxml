@@ -39,7 +39,7 @@ fx:controller="controller.MainController" prefHeight="500.0" prefWidth="1000.0">
 			<tabs>
 				<Tab text="학과 등록" fx:id="subject">
 					<content>
-					<fx:include fx:id="subjcetTab" source="subjectTab.fxml"/>
+					<fx:include fx:id="subjectTab" source="subjectTab.fxml"/>
 					</content>
 				</Tab>
 				<Tab text="학생 등록" fx:id="student">

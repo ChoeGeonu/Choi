@@ -16,7 +16,7 @@ public class SubjectDAO {
 	public ArrayList<SubjectVO> getSubjectTotaList() throws Exception {
 		ArrayList<SubjectVO> list = new ArrayList<>();
 
-		String sql = "select * from subject order by no";
+		String sql = " select * from subject order by no ";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -55,7 +55,8 @@ public class SubjectDAO {
 
 	// 학과등록
 	public void getSubjectRegiste(SubjectVO svo) throws Exception {
-		String sql = "insert into subject " + "(no,s_num,s_name)" + " values " + "(subject_seq.nextval, ?, ?)";
+		String sql = " insert into subject " +  "(no, s_num, s_name)"  + " values " + 
+	"(subject_seq.nextval, ?, ?)";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		try {
