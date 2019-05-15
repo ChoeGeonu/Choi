@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.beans.*?>
+<?import javafx.collections.ObservableList?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController"
+	prefHeight="400" prefWidth="1000">
+	<HBox>
+		<children>
+			<VBox>
+				<padding>
+					<Insets top="10" right="10" bottom="10" left="10" />
+				</padding>
+				<spacing>10</spacing>
+				<children>
+
+					<HBox> 		   				<!-- HBox 컨테이너 선언 -->
+						<children>				<!-- 자식 컨트롤 추가 -->
+							<Label text="담임 선생님 : " />
+							<Label fx:id="lblTeacherName" />
+						</children>
+					</HBox>
+					<HBox> 		   				<!-- HBox 컨테이너 선언 -->
+						<children>				<!-- 자식 컨트롤 추가 -->
+							<Label text="담당과목 : " />
+							<Label fx:id="lblSubjetName" />
+						</children>
+					</HBox>
+					<HBox> 		   				<!-- HBox 컨테이너 선언 -->
+						<children>				<!-- 자식 컨트롤 추가 -->
+							<Label text="수업요일 : " />
+							<Label fx:id="lblDay" />
+						</children>
+					</HBox>
+					<HBox>
+						<spacing>10</spacing>
+						<children>				<!-- 자식 컨트롤 추가 -->
+							<Label text="성명 : " />
+							<TextField fx:id="txtName" prefWidth="70" text="" />
+							<Label text="학년: " />
+							<TextField fx:id="txtYear" prefWidth="30" />
+							<Label text="반:" />
+							<TextField fx:id="txtBan" prefWidth="30" />
+						</children>
+					</HBox>
+					<HBox>
+						<spacing>10</spacing>
+						<Label text="성별 : " />
+						<fx:define>
+							<ToggleGroup fx:id="genderGroup" />
+						</fx:define>
+						<children>
+							<RadioButton fx:id="rbMale" userData="남성" text="남성"
+								toggleGroup="$genderGroup" selected="true" />
+							<RadioButton fx:id="rbFemale" userData="여성" text="여성"
+								toggleGroup="$genderGroup" />
+						</children>
+					</HBox>
+					<HBox>
+						<spacing>10</spacing>
+						<children>				<!-- 자식 컨트롤 추가 -->
+							<Label text="휴대폰 : " />
+							<TextField fx:id="txtPhone" prefWidth="70" />
+							<Label text="비상연락망 : " />
+							<TextField fx:id="txtEmergency" prefWidth="70" />
+						</children>
+					</HBox>
+					<HBox>
+						<spacing>10</spacing>
+						<Label text="수업료 : " />
+						<fx:define>
+							<ToggleGroup fx:id="FreecostGroup" />
+						</fx:define>
+						<children>
+							<RadioButton fx:id="rbSree" userData="무료" text="무료"
+								toggleGroup="$FreecostGroup" selected="true" />
+							<RadioButton fx:id="rbCost" userData="유료" text="유료"
+								toggleGroup="$FreecostGroup" />
+						</children>
+					</HBox>
+
+					<HBox>
+						<spacing>10</spacing>
+						<children>				<!-- 자식 컨트롤 추가 -->
+							<Label text="수업시간 : " />
+							<TextField fx:id="txtTime" prefWidth="70" />
+							<Label text="본인경험 : " />
+							<TextField fx:id="txtExperience" prefWidth="70" />
+						</children>
+					</HBox>
+
+					<HBox>
+						<spacing>10</spacing>
+						<Label text="등급별 가격 : " />
+						<fx:define>
+							<ToggleGroup fx:id="LevelGroup" />
+						</fx:define>
+						<children>
+							<RadioButton fx:id="rbLow" userData="초급(3)" text="초급"
+								toggleGroup="$LevelGroup" selected="true" />
+							<RadioButton fx:id="rbMid" userData="중급(4)" text="중급"
+								toggleGroup="$LevelGroup" />
+							<RadioButton fx:id="rbBigh" userData="고급(5)"
+								text="고급" toggleGroup="$LevelGroup" />
+						</children>
+					</HBox>
+
+
+					<HBox>
+						<spacing>10</spacing>
+						<children>				<!-- 자식 컨트롤 추가 -->
+							<Label text="시작날짜 : " />
+							<TextField fx:id="txtStartdate" prefWidth="80" />
+							<Label text="끝난날짜 : " />
+							<TextField fx:id="txtEnddate" prefWidth="80" />
+						</children>
+					</HBox>
+					<HBox>
+						<spacing>10</spacing>
+						<children>				<!-- 자식 컨트롤 추가 -->
+							<Label text="부모님이메일 : " />
+							<TextField fx:id="txtEmail" prefWidth="200" />
+						</children>
+					</HBox>
+
+					<HBox alignment="center">
+						<spacing>10</spacing>
+						<children>				<!-- 자식 컨트롤 추가 -->
+							<Button fx:id="btnInit">초기화</Button>
+							<Button fx:id="btnRegister">등 록</Button>
+						</children>
+					</HBox>
+
+					<HBox fx:id="imageBox">
+					</HBox>
+					<VBox alignment="center">
+						<spacing>10</spacing>
+						<children>
+							<ImageView fx:id="imageView" fitWidth="230"
+								fitHeight="250" pickOnBounds="true" preserveRatio="true" />
+							<Button fx:id="btnImageFile">이미지 파일 선택</Button>
+						</children>
+					</VBox>
+					<HBox alignment="center">
+						<spacing>10</spacing>
+						<children>				<!-- 자식 컨트롤 추가 -->
+							<Button fx:id="btnEdit">수 정</Button>
+							<Button fx:id="btnDelete">삭 제</Button>
+							<Button fx:id="btnExit">종 료</Button>
+						</children>
+					</HBox>
+				</children>
+			</VBox>
+
+			<VBox>
+				<padding>
+					<Insets top="10" right="10" bottom="10" left="10" />
+				</padding>
+				<Label text="학생 테이블" />
+				<HBox>
+					<padding>
+						<Insets top="10" right="10" bottom="10" left="10" />
+					</padding>
+					<children>				<!-- 자식 컨트롤 추가 -->
+						<Button fx:id="btnAttendance">출 석 부</Button>
+						<Label text="     " />
+						<Button fx:id="btnEmail">이 메 일</Button>
+
+					</children>
+				</HBox>
+				<TableView fx:id="tableView" prefHeight="600"
+					prefWidth="900">
+				</TableView>
+			</VBox>
+		</children>
+	</HBox>
+</AnchorPane>
