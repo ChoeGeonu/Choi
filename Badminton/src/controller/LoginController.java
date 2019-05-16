@@ -60,7 +60,20 @@ public class LoginController implements Initializable {
 
 	// 선생님 등록창 전환
 	public void handerBtnJoinAction(ActionEvent event) {
-		EmailController email = new EmailController();
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/joinView.fxml"));
+			Parent mainView = (Parent) loader.load();
+			Scene scane = new Scene(mainView);
+			Stage mainMtage = new Stage();
+			mainMtage.setTitle("관리 선생님 등록");
+			mainMtage.setScene(scane);
+			Stage oldStage = (Stage) btnLogin.getScene().getWindow();
+			oldStage.close();
+			mainMtage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.err.println("오류" + e);
+		}
 		
 		
 	}
