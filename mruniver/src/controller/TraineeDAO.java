@@ -22,8 +22,7 @@ public class TraineeDAO {
 		String sql ="select sd_num, sd_name, (select s_name from subject where s_num = (select s_num from student where sd_id = ?)) as s_num from student where sd_id = ?";;
 =======
 		String sql = "select sd_num,sd_name,(select s_name from subject where s_num=(select s_num from student where sd_id=?)) as s_num from student where sd_id=?";
->>>>>>> a554a20ada297d1932279f124e8b4ee67e8ed6f3
->>>>>>> 3c8cbb20bc9eb08ed65560c8ddc8690c8fc31866
+
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

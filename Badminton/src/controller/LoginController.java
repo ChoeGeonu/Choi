@@ -60,9 +60,10 @@ public class LoginController implements Initializable {
 
 	// 선생님 등록창 전환
 	public void handerBtnJoinAction(ActionEvent event) {
-		EmailController email = new EmailController();
 		
 		
+		
+	
 	}
 
 	// 로그인 창 닫기
