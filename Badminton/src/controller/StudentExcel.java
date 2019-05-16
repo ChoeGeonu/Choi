@@ -47,15 +47,15 @@ public class StudentExcel {
 			row = sheet.createRow(rowldx + 1);
 
 			cell = row.createCell(0);
-			cell.setCellValue(vo.getNo());// 학생 코드
+			cell.setCellValue(vo.getS_no());// 학생 코드
 			cell = row.createCell(1);
-			cell.setCellValue(vo.getName());// 학생 이름
+			cell.setCellValue(vo.getS_name());// 학생 이름
 			cell = row.createCell(2);
-			cell.setCellValue(vo.getYear());// 학년
+			cell.setCellValue(vo.getS_year());// 학년
 			cell = row.createCell(3);
-			cell.setCellValue(vo.getBan());// 반
+			cell.setCellValue(vo.getS_ban());// 반
 			cell = row.createCell(4);
-			cell.setCellValue(vo.getNwmber());
+			cell.setCellValue(vo.getS_number());
 			// 출석번호
 			/*
 			 * cell = row.createCell(0); cell.setCellValue(vo.getNo());//출석여부

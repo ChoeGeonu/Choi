@@ -60,8 +60,7 @@ public class LoginController implements Initializable {
 
 	// 선생님 등록창 전환
 	public void handerBtnJoinAction(ActionEvent event) {
-<<<<<<< HEAD
-=======
+
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/joinView.fxml"));
 			Parent mainView = (Parent) loader.load();
@@ -76,11 +75,7 @@ public class LoginController implements Initializable {
 			// TODO Auto-generated catch block
 			System.err.println("오류" + e);
 		}
->>>>>>> d4d620748565a371115d39eafe0ed7909a97bec2
-		
-		
-		
-	
+
 	}
 
 	// 로그인 창 닫기

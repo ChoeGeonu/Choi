@@ -103,6 +103,15 @@ public class EmailController implements Initializable {
 
 	// 동기화
 	public void Clear(ActionEvent event) {
+		txtFileAddr.setText("");
+		txtFromAddr.setText("");
+		txtFromName.setText("");
+		txtId.setText("");
+		txtPass.setText("");
+		txtContents.setText("");
+		txtToName.setText("");
+		txtToAddr.setText("");
+		txtTitle.setText("");
 	}
 
 	// 보내는 메소드

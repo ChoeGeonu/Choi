@@ -14,7 +14,7 @@ public class JoinDAO {
 	//관리 선생님 등록
 	public boolean getTeacherRegiste(JoinVO jvo) throws Exception {
 
-		String sql = "insert into schooljoin " + "(id, pw, name)" + " values " + "(?, ?, ?)";
+		String sql = "insert into teacher " + "(t_code, t_id, t_pw, t_name, t_subject)" + " values " + "(teacher_seq.nextval, ?, ?, ?, ?)";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		boolean joinSucess = false;
@@ -23,16 +23,19 @@ public class JoinDAO {
 			
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, jvo.getId()); //아이디
-			pstmt.setString(2, jvo.getPw()); //비밀번호
-			pstmt.setString(3, jvo.getName()); //담임선생님 이름
+			pstmt.setString(1, jvo.getT_id()); //아이디
+			pstmt.setString(2, jvo.getT_pw()); //비밀번호
+			pstmt.setString(3, jvo.getT_name()); //담임선생님 이름
+			pstmt.setString(4, jvo.getT_subject());//담당과목
+			
+			
 			
 			int i = pstmt.executeUpdate();
 
 			if (i == 1) {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("관리 선생님 등록");
-				alert.setHeaderText(jvo.getName() + " 등록.");
+				alert.setHeaderText(jvo.getT_name() + " 등록.");
 				alert.setContentText("관리 선생님 등록 성공!!");
 				alert.showAndWait();
 				joinSucess = true;
@@ -64,7 +67,7 @@ public class JoinDAO {
 	// 아이디 중복 체크
 	public boolean getIdOverlap(String idOverlap) throws Exception {
 
-		String sql = "select * from schooljoin where id = ?";
+		String sql = "select * from teacher where t_id = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

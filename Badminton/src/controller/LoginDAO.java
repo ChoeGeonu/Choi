@@ -10,7 +10,7 @@ public class LoginDAO {
 	// 아이디 중복 체크
 	public boolean getLogin(String loginId, String loginPassword) throws Exception {
 
-		String sql = "select * from schooljoin where id = ? and pw = ?";
+		String sql = "select * from teacher where t_id = ? and t_pw = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -47,7 +47,7 @@ public class LoginDAO {
 	
 	public String getLoginName(String loginId) throws Exception {
 
-		String sql = "select name from schooljoin where id = ?";
+		String sql = "select t_name from teacher where t_id = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
