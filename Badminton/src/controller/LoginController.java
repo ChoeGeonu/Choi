@@ -34,7 +34,8 @@ public class LoginController implements Initializable {
 	private Button btnTeacher; // 선생님등록
 
 	public static String teacherName;
-
+	public static String subjectName;
+	public static String dayName;
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		txtId.setOnKeyPressed(event -> handerTxtIdKeyPressed(event)); // 아이디 입력에서 enter 키 이벤트 적용
@@ -96,6 +97,7 @@ public class LoginController implements Initializable {
 
 		try {
 			teacherName = loginName();
+			
 			// teacherName=txtId.getText();
 			sucess = login.getLogin(txtId.getText().trim(), txtPw.getText().trim());
 		} catch (Exception e1) {
@@ -142,6 +144,8 @@ public class LoginController implements Initializable {
 		}
 	}
 
+	
+
 	// 선생님이름 불러오기
 	public String loginName() {
 		LoginDAO ldao = new LoginDAO();
@@ -155,4 +159,9 @@ public class LoginController implements Initializable {
 		}
 		return name;
 	}
+	
+
+
+
+
 }

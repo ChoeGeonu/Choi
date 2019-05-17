@@ -47,7 +47,7 @@ public class StudentExcel {
 			row = sheet.createRow(rowldx + 1);
 
 			cell = row.createCell(0);
-			cell.setCellValue(vo.getS_no());// 학생 코드
+			cell.setCellValue(vo.getS_code());// 학생 코드
 			cell = row.createCell(1);
 			cell.setCellValue(vo.getS_name());// 학생 이름
 			cell = row.createCell(2);
