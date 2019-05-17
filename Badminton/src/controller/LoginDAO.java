@@ -68,7 +68,7 @@ public class LoginDAO {
 			System.out.println("e=[" + e + "]");
 		} finally {
 			try {
-				// �����ͺ��̽����� ���ῡ ���Ǿ��� ������Ʈ�� ����
+				
 				if (rs != null)
 					rs.close();
 				if (pstmt != null)
@@ -81,4 +81,7 @@ public class LoginDAO {
 		return loginName;
 	}
 
+	
+	
+	
 }
