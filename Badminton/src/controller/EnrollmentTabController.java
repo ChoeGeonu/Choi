@@ -16,7 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
-public class ApintController implements Initializable {
+public class EnrollmentTabController implements Initializable {
 	@FXML
 	private Button btnExcel; // 엑셀
 	@FXML

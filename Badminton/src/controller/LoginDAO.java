@@ -44,7 +44,8 @@ public class LoginDAO {
 		}
 		return loginResult;
 	}
-	
+
+	// 선생님이름
 	public String getLoginName(String loginId) throws Exception {
 
 		String sql = "select t_name from teacher where t_id = ?";
@@ -57,6 +58,7 @@ public class LoginDAO {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, loginId);
+
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				loginName = rs.getString(1);
@@ -68,7 +70,7 @@ public class LoginDAO {
 			System.out.println("e=[" + e + "]");
 		} finally {
 			try {
-				
+
 				if (rs != null)
 					rs.close();
 				if (pstmt != null)
@@ -81,7 +83,42 @@ public class LoginDAO {
 		return loginName;
 	}
 
-	
-	
-	
+	// 담당과목 이름 변경할것
+	public String getLoginName1(String loginId1) throws Exception {
+
+		String sql = "select t_subject from teacher where t_id = ?";
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String loginName1 = null;
+
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, loginId1);
+
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				loginName1 = rs.getString(1);
+			}
+
+		} catch (SQLException e) {
+			System.out.println("e=[" + e + "]");
+		} catch (Exception e) {
+			System.out.println("e=[" + e + "]");
+		} finally {
+			try {
+
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (SQLException e) {
+			}
+		}
+		return loginName1;
+	}
+
 }

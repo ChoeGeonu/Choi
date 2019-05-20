@@ -14,14 +14,20 @@ public class StudentDAO {
 	public StudentVO getStudentregiste(StudentVO sVo)throws Exception{
 		//2 데이터 처리를 위한 sql문
 		StringBuffer sql = new StringBuffer();
-		sql.append("insert into student");
+		sql.append("insert into student ");
 		sql.append(
-				"S_code, S_name, S_year, S_ban, S_number, S_gender, S_phone , S_emergency, S_costfree, S_time, S_experience, S_level, S_startdate, S_enddate, S_email, S_image");
-		sql.append("values (student_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-		
+				"(S_code, S_name, S_year, S_ban, "
+				+ "S_number, S_gender, S_phone , "
+				+ "S_emergency, S_costfree, S_time, "
+				+ "S_experience, S_level, S_startdate,"
+				+ "S_enddate, S_email, S_image) ");
+		sql.append(" values (student_seq.nextval, ?"
+				+ ", ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
+				+ "?, ?, ?, ?)");
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		StudentVO retval=null;
+		
 	try {
 		
 	
@@ -30,6 +36,7 @@ public class StudentDAO {
 		
 		//4.입력받은 정보를 처리하기 위해 sql문장을 생성
 		pstmt= con.prepareStatement(sql.toString());
+		
 		pstmt.setString(1, sVo.getS_name());
 		pstmt.setInt(2, sVo.getS_year());
 		pstmt.setInt(3, sVo.getS_ban());
@@ -55,6 +62,7 @@ public class StudentDAO {
 		System.out.println("안녕");
 		System.out.println("e=["+e+"]");
 	}catch(Exception e) {
+		System.out.println("잘가");
 		System.out.println("e=["+e+"]");
 	}finally {
 		try {

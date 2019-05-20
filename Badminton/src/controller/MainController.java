@@ -129,7 +129,7 @@ public class MainController implements Initializable {
 	Image localimage;//
 
 	// 이미지 저장할 폴더를 매게변수로 파일 객체 선언
-	private File dirSave = new File("D:images");
+	private File dirSave = new File("D:/images");
 	File selectedFile = null;// 이미지 불러올 파일 객체 선언
 
 	@Override
@@ -191,73 +191,73 @@ public class MainController implements Initializable {
 		tableView.setEditable(false);
 
 		// 테이블 뷰 컬럼이름 설정
-		TableColumn cols_Code = new TableColumn("NO");
-		cols_Code.setMaxWidth(40);
-		cols_Code.setCellValueFactory(new PropertyValueFactory<>("s_Code"));
+		TableColumn cols_code = new TableColumn("NO");
+		cols_code.setMaxWidth(40);
+		cols_code.setCellValueFactory(new PropertyValueFactory<>("s_code"));
 
-		TableColumn cols_Name = new TableColumn("이름");
-		cols_Name.setMaxWidth(50);
-		cols_Name.setCellValueFactory(new PropertyValueFactory<>("s_Name"));
+		TableColumn cols_name = new TableColumn("이름");
+		cols_name.setMaxWidth(50);
+		cols_name.setCellValueFactory(new PropertyValueFactory<>("s_name"));
 
-		TableColumn cols_Year = new TableColumn("학년");
-		cols_Year.setMaxWidth(40);
-		cols_Year.setCellValueFactory(new PropertyValueFactory<>("s_Year"));
+		TableColumn cols_year = new TableColumn("학년");
+		cols_year.setMaxWidth(40);
+		cols_year.setCellValueFactory(new PropertyValueFactory<>("s_year"));
 
-		TableColumn cols_Ban = new TableColumn("반");
-		cols_Ban.setMaxWidth(40);
-		cols_Ban.setCellValueFactory(new PropertyValueFactory<>("s_Ban"));
+		TableColumn cols_ban = new TableColumn("반");
+		cols_ban.setMaxWidth(40);
+		cols_ban.setCellValueFactory(new PropertyValueFactory<>("s_ban"));
 
-		TableColumn cols_Number = new TableColumn("출석번호");
-		cols_Number.setMaxWidth(40);
-		cols_Number.setCellValueFactory(new PropertyValueFactory<>("s_Number"));
+		TableColumn cols_number = new TableColumn("출석번호");
+		cols_number.setMaxWidth(40);
+		cols_number.setCellValueFactory(new PropertyValueFactory<>("s_number"));
 
-		TableColumn cols_Gender = new TableColumn("성별");
-		cols_Gender.setMaxWidth(40);
-		cols_Gender.setCellValueFactory(new PropertyValueFactory<>("s_gender"));
+		TableColumn cols_gender = new TableColumn("성별");
+		cols_gender.setMaxWidth(40);
+		cols_gender.setCellValueFactory(new PropertyValueFactory<>("s_gender"));
 
-		TableColumn cols_Phone = new TableColumn("핸드폰");
-		cols_Phone.setMaxWidth(120);
-		cols_Phone.setCellValueFactory(new PropertyValueFactory<>("s_phone"));
+		TableColumn cols_phone = new TableColumn("핸드폰");
+		cols_phone.setMaxWidth(120);
+		cols_phone.setCellValueFactory(new PropertyValueFactory<>("s_phone"));
 
-		TableColumn cols_Emergency = new TableColumn("비상연락");
-		cols_Emergency.setMaxWidth(120);
-		cols_Emergency.setCellValueFactory(new PropertyValueFactory<>("s_Emergency"));
+		TableColumn cols_emergency = new TableColumn("비상연락");
+		cols_emergency.setMaxWidth(120);
+		cols_emergency.setCellValueFactory(new PropertyValueFactory<>("s_emergency"));
 
-		TableColumn colc_Costfree = new TableColumn("수업료");
-		colc_Costfree.setMaxWidth(60);
-		colc_Costfree.setCellValueFactory(new PropertyValueFactory<>("s_Costfree"));
+		TableColumn colc_costfree = new TableColumn("수업료");
+		colc_costfree.setMaxWidth(60);
+		colc_costfree.setCellValueFactory(new PropertyValueFactory<>("s_costfree"));
 
-		TableColumn colc_Time = new TableColumn("수업시간");
-		colc_Time.setMaxWidth(60);
-		colc_Time.setCellValueFactory(new PropertyValueFactory<>("s_Time"));
+		TableColumn colc_time = new TableColumn("수업시간");
+		colc_time.setMaxWidth(60);
+		colc_time.setCellValueFactory(new PropertyValueFactory<>("s_time"));
 
-		TableColumn cols_Experience = new TableColumn("본인경험");
-		cols_Experience.setMaxWidth(180);
-		cols_Experience.setCellValueFactory(new PropertyValueFactory<>("s_Experience"));
+		TableColumn cols_experience = new TableColumn("본인경험");
+		cols_experience.setMaxWidth(180);
+		cols_experience.setCellValueFactory(new PropertyValueFactory<>("s_experience"));
 
-		TableColumn colc_Level = new TableColumn("등급별 가격");
-		colc_Level.setMaxWidth(100);
-		colc_Level.setCellValueFactory(new PropertyValueFactory<>("s_Level"));
+		TableColumn colc_level = new TableColumn("등급별 가격");
+		colc_level.setMaxWidth(100);
+		colc_level.setCellValueFactory(new PropertyValueFactory<>("s_level"));
 
-		TableColumn colc_Startdate = new TableColumn("시작날짜");
-		colc_Startdate.setMaxWidth(140);
-		colc_Startdate.setCellValueFactory(new PropertyValueFactory<>("s_Startdate"));
+		TableColumn colc_startdate = new TableColumn("시작날짜");
+		colc_startdate.setMaxWidth(140);
+		colc_startdate.setCellValueFactory(new PropertyValueFactory<>("s_startdate"));
 
-		TableColumn colc_Enddate = new TableColumn("끝나는날짜");
-		colc_Enddate.setMaxWidth(140);
-		colc_Enddate.setCellValueFactory(new PropertyValueFactory<>("s_Enddate"));
+		TableColumn colc_enddate = new TableColumn("끝나는날짜");
+		colc_enddate.setMaxWidth(140);
+		colc_enddate.setCellValueFactory(new PropertyValueFactory<>("s_enddate"));
 
-		TableColumn cols_Email = new TableColumn("부모님 이메일");
-		cols_Email.setMaxWidth(200);
-		cols_Email.setCellValueFactory(new PropertyValueFactory<>("s_Email"));
+		TableColumn cols_email = new TableColumn("부모님 이메일");
+		cols_email.setMaxWidth(200);
+		cols_email.setCellValueFactory(new PropertyValueFactory<>("s_email"));
 
-		TableColumn cols_Image = new TableColumn("이미지");
-		cols_Image.setMaxWidth(300);
-		cols_Image.setCellValueFactory(new PropertyValueFactory<>("s_Image"));
+		TableColumn cols_image = new TableColumn("이미지");
+		cols_image.setMaxWidth(300);
+		cols_image.setCellValueFactory(new PropertyValueFactory<>("s_Image"));
 
-		tableView.getColumns().addAll(cols_Code, cols_Name, cols_Year, cols_Ban, cols_Number, cols_Gender, cols_Phone,
-				cols_Emergency, colc_Costfree, colc_Time, cols_Experience, colc_Level, colc_Startdate, colc_Enddate,
-				cols_Email, cols_Image);
+		tableView.getColumns().addAll(cols_code, cols_name, cols_year, cols_ban, cols_number, cols_gender, cols_phone,
+				cols_emergency, colc_costfree, colc_time, cols_experience, colc_level, colc_startdate, colc_enddate,
+				cols_email, cols_image);
 
 		// 학생전체 정보
 		totalList();
@@ -281,7 +281,7 @@ public class MainController implements Initializable {
 				}
 				// 이미지 파일 저장
 				String s_image = imageSave(selectedFile);
-
+				
 				if (event.getSource().equals(btnRegister)) {
 					svo = new StudentVO(txtName.getText(), Integer.parseInt(txtYear.getText().trim()),
 							Integer.parseInt(txtBan.getText().trim()), Integer.parseInt(txtNumber.getText().trim()),
@@ -289,10 +289,10 @@ public class MainController implements Initializable {
 							txtEmergency.getText(), CostFreeGroup.getSelectedToggle().getUserData().toString(),
 							Integer.parseInt(txtTime.getText().trim()), txtExperience.getText(),
 							LevelGroup.getSelectedToggle().getUserData().toString(), txtStartdate.getText(),
-							txtEnddate.getText(), txtEmail.getText(), s_image);
+							txtEnddate.getText(), txtEmail.getText(),s_image);
+
 					sdao = new StudentDAO();
 					sdao.getStudentregiste(svo);
-
 					if (sdao != null) {
 						totalList();
 						Alert alert = new Alert(AlertType.INFORMATION);
@@ -320,10 +320,10 @@ public class MainController implements Initializable {
 						txtEnddate.setEditable(true);
 						handlerBtnInitAction(event);
 					}
-
 				}
 
 			} catch (Exception e) {
+				e.printStackTrace();
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("학생 정보 입력");
 				alert.setHeaderText("주의합시다");
@@ -370,8 +370,10 @@ public class MainController implements Initializable {
 		btnAttendance.setOnAction(event -> handlerBtnAttendanceActoion(event)); // 출석부 이동
 		btnImageFile.setOnAction(event -> handlerBtnImageFileAction(event)); // 이미지 선택 창
 		btnInit.setOnAction(event -> handlerBtnInitAction(event));
-		lblTeacherName.setText(LoginController.teacherName);
+		lblTeacherName.setText(LoginController.teacherName);//담당 선생님
+		lblSubjectName.setText(LoginController.subjectName);//담당 과목
 		
+
 	}
 
 //이미지 삭제 메소드
